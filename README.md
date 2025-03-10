@@ -7,7 +7,7 @@ A simple Pomodoro Timer with sound notifications and ASCII art.
 Install the required library:
 
 ```bash
-pip install playsound
+pip3 install playsound
 ```
 
 ## Usage:
@@ -15,5 +15,5 @@ pip install playsound
 Run the script:
 
 ```bash
-python pomodorotimer.py
+python3 pomodorotimer.py
 ```
