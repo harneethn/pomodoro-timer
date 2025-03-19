@@ -1,12 +1,12 @@
 import time
 import subprocess
-from playsound import playsound
+
 
 alarmSound = 'alarm.mp3'
 
 def playSound(alarmSound):
     try:
-        playsound(alarmSound)
+        subprocess.Popen(['afplay', alarmSound])
     except Exception as e:
         print(f"Error playing sound: {e}")
 
@@ -38,8 +38,8 @@ def countdown(minutes, message):
     seconds = minutes * 60
     while seconds > 0:
         mins, secs = divmod(seconds, 60)
-        time_format = '{:02}:{:02}'.format(mins, secs)
-        print(time_format, end='\r')
+        timeFormat = '{:02}:{:02}'.format(mins, secs)
+        print(timeFormat, end='\r')
         time.sleep(1)
         seconds -= 1
     print(message)
@@ -48,7 +48,7 @@ def countdown(minutes, message):
 def pomodoroTimer():
     workTime = int(input("enter your work time in minutes: "))
     breakTime = int(input("enter your break time in minutes: "))
-    cycles = int(input("enter your preferred number of cycles: "))
+    cycles = int(input("enter your prefered number of cycles: "))
     
     for i in range(cycles):
         displayAscii()
